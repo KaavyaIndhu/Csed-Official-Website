@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionOne from '../components/SectionOne'
+import SectionOne from '../components/SectionOne/SectionOne'
 
 function Home() {
   return (
