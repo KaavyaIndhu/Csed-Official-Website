@@ -8,34 +8,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-creative';
 import './boards.css';
 
-// Import Common Assets
-import bgRed from '../../../assets/sectionFour/boards/bgred.webp';
-
-// Import 2024 Assets
-import group2024 from '../../../assets/sectionFour/boards/2024/Board2024GroupImage.webp';
-import yashImg from '../../../assets/sectionFour/boards/2024/yash.new.webp';
-import adhidevImg from '../../../assets/sectionFour/boards/2024/adhidev.webp';
-import aakashImg from '../../../assets/sectionFour/boards/2024/aakash.webp';
-import vibhuImg from '../../../assets/sectionFour/boards/2024/vibhu.webp';
-import anuragImg from '../../../assets/sectionFour/boards/2024/anurag.webp';
-import ayushiImg from '../../../assets/sectionFour/boards/2024/ayushi.webp';
-import krishnaImg from '../../../assets/sectionFour/boards/2024/krishna.webp';
-import suhaniImg from '../../../assets/sectionFour/boards/2024/suhani.webp';
-import satvikImg from '../../../assets/sectionFour/boards/2024/satvik.webp';
-import vedantImg from '../../../assets/sectionFour/boards/2024/vedant.webp';
-
-// Import 2023 Assets
-import group2023 from '../../../assets/sectionFour/boards/2023/Board2023GroupImage.webp';
-import kanishkaImg from '../../../assets/sectionFour/boards/2023/kanishka.webp';
-import ikshitImg from '../../../assets/sectionFour/boards/2023/ikshit.webp';
-import urvaImg from '../../../assets/sectionFour/boards/2023/urva.webp';
-import shailjaImg from '../../../assets/sectionFour/boards/2023/shailja.webp';
-import ruchitaImg from '../../../assets/sectionFour/boards/2023/ruchita.webp';
-import supritImg from '../../../assets/sectionFour/boards/2023/suprit.webp';
-import ananyaImg from '../../../assets/sectionFour/boards/2023/ananya.webp';
-import preethiImg from '../../../assets/sectionFour/boards/2023/preethi.webp';
-import ramImg from '../../../assets/sectionFour/boards/2023/ram.webp';
-import rajeshwariImg from '../../../assets/sectionFour/boards/2023/Rajeshwari.webp';
+// Import Assets from Central Store
+import {
+    bgRed, bgCommon,
+    group2024, yashImg, adhidevImg, aakashImg, vibhuImg, anuragImg, ayushiImg, krishnaImg, suhaniImg, satvikImg, vedantImg,
+    group2023, kanishkaImg, ikshitImg, urvaImg, shailjaImg, ruchitaImg, supritImg, ananyaImg, preethiImg, ramImg, rajeshwariImg
+} from '../../essentials/ImagePaths';
 
 const boardsData = {
     '2025': [], // Empty means "Coming Soon"
@@ -226,17 +204,25 @@ const boardsData = {
 };
 
 const Boards = () => {
+    // activeYear controls the buttons (immediate feedback)
     const [activeYear, setActiveYear] = useState('2025');
+    // displayYear controls the image content (delayed for exit animation)
+    const [displayYear, setDisplayYear] = useState('2025');
+    // animationState: 'static', 'entering', 'exiting'
+    const [animationState, setAnimationState] = useState('static');
+    // transitionDirection: 'up' (increase year) or 'down' (decrease year)
+    const [transitionDirection, setTransitionDirection] = useState('up');
 
     // Preload images on mount
     React.useEffect(() => {
         const imageList = [
             bgRed,
+            bgCommon,
             group2024,
             yashImg, adhidevImg, aakashImg, vibhuImg,
             anuragImg, ayushiImg, krishnaImg, suhaniImg,
             satvikImg, vedantImg,
-            group2023,
+            group2023, // Verified 2023 preload
             kanishkaImg, ikshitImg, urvaImg, shailjaImg,
             ruchitaImg, supritImg, ananyaImg, preethiImg,
             ramImg, rajeshwariImg
@@ -248,12 +234,66 @@ const Boards = () => {
         });
     }, []);
 
+    const handleYearChange = (year) => {
+        if (year === activeYear) return;
+        
+        // Determine Direction
+        const currentYearNum = parseInt(activeYear);
+        const newYearNum = parseInt(year);
+        // If new year > current year, we are going UP (e.g. 2023->2024? No wait order is 2025, 2024, 2023 usually rendered left to right?)
+        // Let's stick to standard logic: 
+        // 2023 -> 2024 (Increase): UP
+        // 2025 -> 2024 (Decrease): DOWN
+        const direction = newYearNum > currentYearNum ? 'up' : 'down';
+        setTransitionDirection(direction);
+
+        setActiveYear(year);
+        // Start exit animation for current display year
+        setAnimationState('exiting');
+
+        // Wait for exit animation to finish (0.5s)
+        setTimeout(() => {
+            setDisplayYear(year);
+            setAnimationState('entering');
+            
+            // Wait for enter animation to finish (0.5s)
+            setTimeout(() => {
+                setAnimationState('static');
+            }, 500); 
+        }, 500);
+    };
+
     // Determine Group Phase Image based on year
     const getGroupImage = (year) => {
         if (year === '2025') return null; // "For 2025 dont put group image"
         if (year === '2024') return group2024;
         if (year === '2023') return group2023;
         return group2024; // Default
+    };
+
+    const getAnimationClass = (year, state) => {
+        // If exiting, depends on what year we ARE exiting
+        if (state === 'exiting') {
+            if (year === '2023') return 'enter-out';
+            // For other years, we can use fade-out
+            return 'fade-out';
+        }
+        
+        // If entering, depends on what year is COMING
+        if (state === 'entering') {
+            if (year === '2023') return 'enter-in';
+            // For others, use fade-in (which will now be static after fade)
+            return 'fade-in';
+        }
+
+        // Static state - ALL years are now static only
+        return 'static-visible';
+    };
+
+    const getDigitClass = (state) => {
+        if (state === 'exiting') return `digit-exit-${transitionDirection}`;
+        if (state === 'entering') return `digit-enter-${transitionDirection}`;
+        return ''; // static
     };
 
     return (
@@ -264,26 +304,30 @@ const Boards = () => {
                 <div className="headerteampageleft2">Meet Our Board</div>
 
                 <div className="teamspageleftpageimage">
-                    <div className="teamscontainerleft">
-                        {/* Group Image with fade effect */}
-                        <div className={`divva ${activeYear === '2025' ? 'fade-out' : 'fade-in'}`}>
-                            {getGroupImage(activeYear) && (
-                                <img 
-                                    src={getGroupImage(activeYear)} 
-                                    alt={`Team ${activeYear}`} 
-                                    loading="lazy" 
-                                    className="fade-in"
-                                    key={activeYear} // Force re-render for animation
-                                />
-                            )}
+                    <div className="teamscontainerleft" style={{backgroundImage: `url(${bgCommon})`}}>
+                        {/* Group Image logic uses displayYear for smooth transitions */}
+                        {/* Group Image logic uses displayYear for smooth transitions */}
+                        <div className="divva">
+                             {/* 2024 Image */}
+                            <img 
+                                src={group2024} 
+                                alt="Team 2024" 
+                                className={displayYear === '2024' ? getAnimationClass('2024', animationState) : 'group-image-hidden'}
+                            />
+                            {/* 2023 Image */}
+                            <img 
+                                src={group2023} 
+                                alt="Team 2023" 
+                                className={displayYear === '2023' ? getAnimationClass('2023', animationState) : 'group-image-hidden'}
+                            />
                         </div>
 
-                        {/* Year Number Display */}
+                        {/* Year Number Display also uses displayYear to match image */}
                         <div className="numberrr">
                             <p className="numberrrpara">202</p>
                             <div className="noconatiner">
-                                <div className="nodivva">
-                                    <span>{activeYear.slice(3)}</span>
+                                <div className={`nodivva ${getDigitClass(animationState)}`}>
+                                    <span>{displayYear.slice(3)}</span>
                                 </div>
                             </div>
                         </div>
@@ -296,9 +340,9 @@ const Boards = () => {
                             <p 
                                 key={year} 
                                 className={`btnew ${activeYear === year ? 'special' : ''}`}
-                                onClick={() => setActiveYear(year)}
+                                onClick={() => handleYearChange(year)}
                             >
-                                <a href="javascript:void(0)" className="btn2023">{year}</a>
+                                <span className="btn2023">{year}</span>
                             </p>
                         ))}
                     </div>

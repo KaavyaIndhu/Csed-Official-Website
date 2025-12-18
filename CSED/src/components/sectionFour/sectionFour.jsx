@@ -2,13 +2,9 @@ import React, { useEffect } from "react";
 import "./blogs.css"; // Assuming style.css is in the same directory
 
 // Import Images
-import blogimg1 from "../../assets/sectionFour/blogimg1.webp";
-import blogimg2 from "../../assets/sectionFour/blogimg2.webp";
-import blogimg3 from "../../assets/sectionFour/blogimg3.webp";
-import blogimg4 from "../../assets/sectionFour/blogimg4.webp";
-import blogimg5 from "../../assets/sectionFour/blogimg5.webp";
-import blogimg6 from "../../assets/sectionFour/blogimg6.webp";
-import Boards from "./boards/Boards";
+import { 
+  blogimg1, blogimg2, blogimg3, blogimg4, blogimg5, blogimg6 
+} from "../essentials/ImagePaths";
 
 const SectionFour = () => {
   useEffect(() => {
