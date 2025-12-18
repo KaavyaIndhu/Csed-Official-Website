@@ -7,7 +7,7 @@ import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min";
 
 import './SectionOne.css'
-import { asterisk, image2, logo, vitlogo, backgrounddrop } from '../essentials/Imgaepaths';
+import { asterisk, image2, logo, vitlogo, backgrounddrop, merch } from '../essentials/Imgaepaths';
 
 //Icons
 import { HiMenuAlt1 } from "react-icons/hi";
@@ -297,12 +297,12 @@ function SectionOne() {
             </div>
             <div className="menu-content">
               <div className="left">
-                <h2>Announcements <RiMegaphoneFill /></h2>
+                <h2>Announcements <RiMegaphoneFill size={24} /></h2>
                 <div className="tr">
                   <div className="blr">
                     <h3>Coming soon!</h3>
                   </div>
-                  <img src="./assests/merch.webp" loading="lazy" alt="image" />
+                  <img src={merch} alt="image" />
                 </div>
                 <div className="h4-menu">
                   <a href="#" target="_parent" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
