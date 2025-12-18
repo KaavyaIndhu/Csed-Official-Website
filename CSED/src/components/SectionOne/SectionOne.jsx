@@ -120,21 +120,7 @@ function SectionOne() {
 
   return (
     <>
-      <div>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-      </div>
+
       <div className="page2" id="page2" ref={page2Ref}>
 
         <div className="rounded-div-wrapper">
@@ -178,21 +164,7 @@ function SectionOne() {
           </div>
         </div>
       </div>
-      <div>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
-      </div>
+
     </>
   )
 }
