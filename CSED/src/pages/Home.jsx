@@ -1,19 +1,12 @@
-import React from 'react'
-import SectionOne from '../components/SectionOne/SectionOne'
-import SectionFour from '../components/sectionFour/sectionFour'
-
-import Boards from "../components/sectionFour/boards/Boards";
-
-
+import SectionOne from "../components/SectionOne/SectionOne";
+import SectionTwo from "../components/SectionTwo/SectionTwo";
 
 function Home() {
   return (
-    <div className="bg-[]">
+    <div>
       <SectionOne />
-      <SectionFour />
-      <Boards />
     </div>
   )
 }
 
-export default Home
+export default Home;
