@@ -1,0 +1,744 @@
+/* ============================
+   BOARD SPECIFIC STYLES
+   ============================ */
+
+/* Copied and adapted from board.css */
+@font-face {
+    font-family: kommon;
+    src: url(./KommonGrotesk-SemiBold.woff2);
+    font-display: swap
+}
+
+.teamspages * {
+    margin: 0;
+    padding: 0;
+    cursor: auto !important;
+}
+
+.teamspages {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: #181818;
+    overflow: hidden
+}
+
+.teamspagesright {
+    min-height: 100vh;
+    overflow: hidden;
+    width: 45%;
+    background-color: #181818
+}
+
+.teamspagesleft {
+    width: 55%;
+    background-color: #181818;
+    position: relative
+}
+
+.swiper-slide-shadow {
+    opacity: 0 !important
+}
+
+.headerteampageleft {
+    font-family: manrope;
+    font-size: 2.083333vw;
+    padding-left: 3.7vw;
+    margin: 5.72969vh 1.627604vw .625521vh 0;
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal
+}
+
+.headerteampageleft2 {
+    color: #fff;
+    font-size: 4.063vw;
+    padding-left: 3.5vw;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    background: linear-gradient(90deg, #ffe277 -25.96%, #ffb55c 53.96%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.teamspageleftpageimage {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    padding-left: 2.88vw;
+    position: relative
+}
+
+.teamscontainerleft {
+    height: 52.083vh;
+    min-width: 46.875vw;
+    background-color: #000;
+    overflow: hidden;
+    /* background-image: url(./Assets/board.webp);  Removed, handled via IMG tag or generic background */
+    background-size: 40.365vw 40.509vh;
+    background-color: #181818;
+    background-position: 0 2.5rem;
+    background-repeat: no-repeat
+}
+
+.divva {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: transform 1s
+}
+
+.divva img {
+    width: 40vw;
+    height: 50vh;
+    align-self: flex-start;
+    margin-left: .8vw;
+    object-fit: contain;
+    /* Added to keep aspect ratio */
+}
+
+/* Reusing divva styles for other group photos basically */
+
+.fade-in {
+    animation: fadeIn 1s forwards
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+.noconatiner span {
+    color: #ff2a2a;
+    font-family: Sora;
+    font-size: 10.416667vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: block;
+}
+
+.numberrrpara span {
+    color: #ff2a2a
+}
+
+.numberrr p {
+    font-family: Sora;
+    padding: 0;
+    width: fit-content;
+    color: #fff;
+    text-align: justify;
+    font-size: 10.416667vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.numberrr {
+    position: absolute;
+    z-index: 3;
+    bottom: -1vh;
+    right: 4vw;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.noconatiner {
+    height: 12.695313vw;
+    width: 7.356771vw;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+.footerteamspage {
+    width: 100%;
+    position: absolute;
+    bottom: 6vh
+}
+
+#buttonteamspages {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    width: 100%;
+    justify-content: center;
+    margin-left: -4.8vw
+}
+
+#buttonteamspages p {
+    vertical-align: middle;
+    border: 3px solid #bababa;
+    font-family: Sora;
+    border-radius: 9.287px;
+    font-weight: 800;
+    color: #fff;
+    transition: all ease .4s;
+    position: relative;
+    overflow: hidden;
+    background-color: #1b1818;
+    padding: 5.5px 2.6vw;
+    cursor: pointer;
+}
+
+#buttonteamspages a {
+    text-decoration: none
+}
+
+#buttonteamspages p::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ff2a2a;
+    left: 0;
+    bottom: -100%;
+    border-radius: 40%;
+    transition: all ease .4s
+}
+
+#buttonteamspages p:hover::after,
+#buttonteamspages p.special::after {
+    bottom: 0;
+    border-radius: 0
+}
+
+#buttonteamspages p a {
+    vertical-align: middle;
+    font-family: Inter;
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.693vw;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    height: 100%
+}
+
+#buttonteamspages p:hover a {
+    color: #000
+}
+
+.caption {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 100%;
+    padding: 2.315vh 1.302vw 2.315vh 1.302vw
+}
+
+.teamspagespan5 {
+    width: fit-content;
+    text-align: center;
+    border-radius: .456vw;
+    background-color: #ff2c2c;
+    font-size: 1.758vw;
+    padding: .555729vh 1.302083vw;
+    border: .130208vw solid #ff2c2c;
+    margin: 1.455729vh auto;
+    color: #fff;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal
+}
+
+.span8 p {
+    color: #fff;
+    font-size: 1.25vw;
+    text-align: center;
+    margin-top: -1.1vw;
+    font-family: Manrope
+}
+
+.span8 {
+    padding: 4% 10%;
+    line-height: 1.6rem
+}
+
+.span4 h3 {
+    text-align: justify;
+    font-family: Sora;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: #fff;
+    text-align: center;
+    font-size: 1.921vw
+}
+
+.blocks {
+    display: flex;
+    width: 100%;
+    height: 100%
+}
+
+.social-btns .btn.twitter .fa {
+    color: #fff;
+    padding-bottom: 2px
+}
+
+.social-btns .btn.linkedin .fa {
+    color: #fff;
+    padding-bottom: .9vh;
+    padding-left: 2px
+}
+
+.social-btns {
+    display: flex;
+    flex-direction: column
+}
+
+.social-btns .btn {
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    overflow: hidden
+}
+
+.social-btns .btn .fa {
+    font-size: 30px;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: .065104vw;
+    padding-right: .5vw
+}
+
+.socialmediaicon {
+    position: absolute;
+    z-index: 15;
+    bottom: 3%;
+    right: 6%
+}
+
+.imagendsocialmediaicon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 14.8vh;
+    z-index: 6;
+    padding-left: 5%
+}
+
+.special {
+    background-color: #ff3131 !important;
+    color: #fff
+}
+
+/* Individual Image Styles - Adapted from original */
+.fgaakash,
+.fgyash,
+.fgvibhu,
+.fganurag,
+.fgayushi,
+.fgkrishna,
+.fgsuhani,
+.fgadhidev,
+.fgvedant,
+.fgsatvik,
+.fgkanishka,
+.fgruchita,
+.fgikshit,
+.fgananya,
+.fgpreethi,
+.fgrajeshwari,
+.fgsuprit,
+.fgurva,
+.fgram,
+.fgshailja {
+    position: absolute;
+    bottom: 3%;
+    z-index: 5;
+}
+
+/* Specific adjustments for 2024 */
+.fgyash {
+    max-width: 27.344vw;
+    max-height: 49.19vh;
+    left: 0;
+    z-index: 4;
+}
+
+.fgadhidev {
+    max-width: 21.159vw;
+    max-height: 44.675926vh;
+    left: 1.627604vw;
+}
+
+.fgaakash {
+    max-width: 21.419vw;
+    max-height: 45.255vh;
+    left: 12px;
+}
+
+.fgvibhu {
+    max-width: 20.833vw;
+    max-height: 44.907vh;
+    left: 2.344vw;
+}
+
+.fganurag {
+    max-width: 21.484vw;
+    max-height: 47.91667vh;
+    left: 2.344vw;
+}
+
+.fgayushi {
+    max-width: 27.344vw;
+    max-height: 43.402778vh;
+    left: 3.145833vw;
+}
+
+.fgkrishna {
+    max-width: 27.344vw;
+    max-height: 48.611111vh;
+    left: .130208vw;
+}
+
+.fgsuhani {
+    max-width: 27.34vw;
+    max-height: 44.676vh;
+    left: 2.864583vw;
+}
+
+.fgsatvik {
+    max-width: 27.344vw;
+    max-height: 44.212963vh;
+    left: 1.5625vw;
+}
+
+.fgvedant {
+    max-width: 27.344vw;
+    max-height: 46.064815vh;
+    left: 1.822917vw;
+}
+
+/* Specific adjustments for 2023 */
+.fgkanishka {
+    max-width: 23.763vw;
+    max-height: 42.245vh;
+    left: -2vw;
+}
+
+.fgikshit {
+    max-width: 27.344vw;
+    max-height: 38.657vh;
+    left: 4.427vw;
+}
+
+.fgurva {
+    max-width: 93%;
+    max-height: 34.491vh;
+    left: -.455729vw;
+}
+
+.fgshailja {
+    max-width: 22.135417vw;
+    max-height: 47.685vh;
+    left: 2.70677vw;
+}
+
+.fgruchita {
+    max-width: 76%;
+    max-height: 47.917vh;
+    left: 3.516vw;
+}
+
+.fgsuprit {
+    max-width: 20.182292vw;
+    max-height: 34.722vh;
+    left: 3.059896vw;
+}
+
+.fgananya {
+    max-width: 27.344vw;
+    max-height: 49.19vh;
+    left: 3.059896vw;
+}
+
+.fgpreethi {
+    max-width: 27.344vw;
+    max-height: 37.731vh;
+    left: 5.2vw;
+}
+
+.fgram {
+    max-width: 27.148438vw;
+    max-height: 46.296vh;
+    left: .585938vw;
+}
+
+.fgrajeshwari {
+    max-width: 19.531vw;
+    max-height: 36.111vh;
+    left: 5.729vw;
+}
+
+
+.bgrect {
+    position: relative;
+    max-width: 25.67vw;
+    max-height: 45.719vh;
+    top: 2.425vh;
+    left: 0
+}
+
+.teamspagephotocontainer {
+    position: relative
+}
+
+.swiper-pagination.teams-page {
+    position: absolute;
+    top: 7.5vh !important;
+    left: 21vw !important;
+    height: fit-content !important;
+    width: fit-content !important
+}
+
+.swiper-pagination-fraction {
+    width: fit-content !important;
+    left: 50% !important;
+    height: fit-content !important;
+    color: #fff !important;
+    font-family: Sora !important;
+    font-size: 25px !important;
+    font-style: normal;
+    font-weight: 200 !important;
+    line-height: normal
+}
+
+.swiper-pagination-current {
+    color: #fff;
+    font-family: Sora;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal
+}
+
+.swiper-pagination-total {
+    color: #fff;
+    font-family: Sora;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal
+}
+
+.swiper-pagination.teams-page .swiper-pagination-fraction .swiper-pagination-horizontal {
+    height: fit-content !important;
+    width: fit-content !important;
+    color: #fff !important
+}
+
+.swiper-button-next.teams,
+.swiper-button-prev.teams {
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-image: none !important;
+    transform: translateY(-50%);
+    margin-top: 0 !important;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+    /* Ensure consistent arrow look */
+    z-index: 10;
+    cursor: auto !important;
+    /* Ensure cursor is visible on button */
+}
+
+/* Hide default Swiper icons entirely */
+.swiper-button-next.teams::after,
+.swiper-button-prev.teams::after {
+    display: none !important;
+    content: none !important;
+}
+
+.swiper-button-next.teams {
+    right: 8%;
+    top: 50%
+}
+
+.swiper-button-prev.teams {
+    left: 8%;
+    top: 50%
+}
+
+/* Helper to center content */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    flex-direction: column;
+}
+
+/* ============================
+   MEDIA QUERIES
+   ============================ */
+
+@media screen and (max-width:380px) {
+    .teamspagesleft {
+        height: 85vh
+    }
+
+    .headerteampageleft {
+        font-size: 5vw;
+        padding-left: 4vw;
+        margin: 45px 0 15px 0;
+        font-weight: 700
+    }
+
+    .headerteampageleft2 {
+        font-size: 11vw;
+        padding-bottom: 15px;
+        margin-left: -2vw
+    }
+
+    .teamspageleftpageimage {
+        margin-top: -2vh;
+        padding-left: 4vw
+    }
+
+    .teamscontainerleft {
+        height: 38vh;
+        background-size: 92.615vw 24.991vh;
+        background-position: -1.9vw 3.704vh
+    }
+
+    .divva img {
+        width: 94%;
+        height: 78%
+    }
+
+    .noconatiner span {
+        font-size: 12.731vh
+    }
+
+    .numberrr p {
+        font-size: 12.731vh
+    }
+
+    .numberrr {
+        bottom: -9vh;
+        right: 0
+    }
+
+    .noconatiner {
+        height: 15.394vh;
+        width: 17.492vw
+    }
+
+    #buttonteamspages p {
+        padding: 3px 34px
+    }
+
+    #buttonteamspages p a {
+        font-size: 5vw
+    }
+
+    #buttonteamspages {
+        gap: 3vw;
+        margin-left: 0
+    }
+
+    .footerteamspage {
+        bottom: 3vh
+    }
+
+    .imagendsocialmediaicon {
+        padding-top: 11.5vh;
+        padding-left: 0
+    }
+
+    /* Mobile image adjustments */
+    .bgrect {
+        top: 20px;
+        max-width: 21.563rem;
+    }
+
+    .fgyash {
+        max-width: 331px;
+        max-height: 425px;
+        left: -1%;
+    }
+
+    .fgvibhu {
+        max-width: 320px;
+        max-height: 312px;
+        left: 36px
+    }
+
+    /* ... Add other mobile adjustments as needed from original CSS ... */
+
+    .teamspagespan5 {
+        font-size: 18px;
+        padding: 7px 16px;
+        margin: 4% auto;
+    }
+
+    .span4 h3 {
+        font-size: 1.5rem;
+        margin-top: 3%
+    }
+
+    .swiper-pagination.teams-page {
+        top: 3.2vh !important;
+        left: 42vw !important
+    }
+
+    .swiper-button-next.teams {
+        right: 6%;
+        top: 5vh
+    }
+
+    .swiper-button-prev.teams {
+        left: 6%;
+        top: 5vh
+    }
+}
