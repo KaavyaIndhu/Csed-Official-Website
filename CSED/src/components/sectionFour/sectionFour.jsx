@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./blogs.css"; // Assuming style.css is in the same directory
 
+import Boards from './boards/Boards';
+
 // Import Images
 import { 
   blogimg1, blogimg2, blogimg3, blogimg4, blogimg5, blogimg6 
