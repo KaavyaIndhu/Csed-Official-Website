@@ -1,0 +1,753 @@
+/* Base Styles */
+@font-face {
+    font-family: kommon;
+    src: url(./KommonGrotesk-SemiBold.woff2);
+    font-display: swap
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: transparent;
+}
+
+body,
+html {
+    width: 100%;
+    background-color: #181818;
+}
+
+body::-webkit-scrollbar {
+    display: none
+}
+
+/* Loader */
+.loader {
+    background-color: #1b1818;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 99;
+    transition: all ease .2s
+}
+
+.loader #yellow {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: #1b1818;
+    z-index: 8;
+    transition: all ease .2s
+}
+
+.loader .laptoploader,
+.loader .mobileloader {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    object-fit: cover;
+    z-index: 7
+}
+
+.loader .mobileloader {
+    display: none
+}
+
+
+/* Page 1 Styles */
+.page1 {
+    width: 100%;
+    height: 110vh;
+    overflow: hidden
+}
+
+.page1 .gradd {
+    position: absolute;
+    top: -2%;
+    left: 0;
+    width: 30vw;
+    height: 103vh
+}
+
+.page1 nav {
+    width: 100%;
+    height: 10vh;
+    background: 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.1vw
+}
+
+.page1 nav .nav-left {
+    width: 50%;
+    display: flex
+}
+
+.page1 nav .nav-left img {
+    width: 18vw;
+    height: 8vh;
+    margin-left: 5.8vw
+}
+
+.page1 nav .nav-right {
+    color: #fff;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5.5vw;
+    text-align: center;
+    font-family: manrope
+}
+
+.page1 nav .nav-right span {
+    font-size: 2vw;
+    scale: 0.8
+}
+
+.page1 nav .nav-right i {
+    align-items: center;
+    align-content: center;
+    font-size: 1.5vw;
+    margin-top: .5vh;
+    background-color: #fff;
+    padding: .45vw;
+    border-radius: 50%;
+    color: #000
+}
+
+/* Menu Animations */
+.no-scroll {
+    overflow: hidden
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes slideOutToTop {
+    from {
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0
+    }
+}
+
+.menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 77%;
+    height: 100%;
+    background: url("./assests/menucurvebg.webp") no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    z-index: -1
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    overflow: hidden
+}
+
+.main .menu {
+    position: relative;
+    transform: translateY(-100%);
+    z-index: 1000;
+    overflow: hidden;
+    display: none;
+    transition: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    top: 0;
+    height: 100vh;
+    border: 1px solid #292626;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #1b1818
+}
+
+.main .menu .part1 {
+    width: 100vw;
+    height: 90vh
+}
+
+.main .menu .part2 {
+    width: 100vw;
+    margin-top: 5px;
+    height: 10vh;
+    display: flex;
+    flex-direction: column
+}
+
+.main .menu .part2 hr {
+    border: 1px solid #ff1818;
+    width: 85vw;
+    margin: 10px auto;
+    margin-top: -10px;
+    display: flex;
+    justify-content: center
+}
+
+.main .menu .menu-nav {
+    display: flex;
+    width: 100vw;
+    height: 7vh;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center
+}
+
+.main .menu .menu-nav .menu-nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 7vh;
+    width: 50%;
+    font-family: sora;
+    padding-right: 5.5vw;
+    margin-top: 3.1vw
+}
+
+.main .menu .menu-nav .menu-nav-right span {
+    font-size: 2vw;
+    scale: 0.8
+}
+
+.main .menu .menu-nav .menu-nav-right i {
+    align-items: center;
+    align-content: center;
+    font-size: 2vw;
+    margin-top: .5vh;
+    background-color: #fff;
+    padding: .3vw;
+    border-radius: 50%;
+    color: #000
+}
+
+.main .menu .menu-nav img {
+    width: 17.8vw;
+    height: 8vh;
+    margin-left: 5.8vw;
+    margin-top: 3.1vw
+}
+
+.main .menu .menu-content {
+    display: flex;
+    width: 100%;
+    height: 43vh;
+    justify-content: space-between
+}
+
+.main .menu .menu-content .left {
+    display: flex;
+    width: 50%;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 6.2vw;
+    margin-left: 6.2vw
+}
+
+.main .menu .menu-content .left h2 {
+    padding-bottom: 10px;
+    font-family: Sora;
+    letter-spacing: 2px;
+    font-weight: 200;
+    font-size: 2.2vw
+}
+
+.main .menu .menu-content .left h4 {
+    padding-top: 7px;
+    font-family: Sora;
+    letter-spacing: 1.5px;
+    font-weight: 200
+}
+
+.main .menu .menu-content .left .h4-menu a {
+    font-size: 2vw;
+    text-decoration: none;
+    color: #fff;
+    gap: .6vw;
+    display: flex;
+    justify-content: start;
+    align-items: baseline
+}
+
+.main .menu .menu-content .left .h4-menu a h4 {
+    font-size: 2vw
+}
+
+.main .menu .menu-content .left .h4-menu a i {
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+    font-size: 1.8vw
+}
+
+.main .menu .menu-content .left h4:hover {
+    color: #ff1818;
+    transition: all ease-in-out .5s
+}
+
+.main .menu .menu-content .left h5 {
+    padding-top: 6px;
+    font-size: 1.6vw;
+    color: #969696;
+    font-family: Sora;
+    font-weight: 40
+}
+
+.main .menu .menu-content .left .blr {
+    height: 30vh;
+    width: 25vw;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.8vw;
+    letter-spacing: .4vw;
+    font-weight: 40;
+    font-family: Sora;
+    background-color: #0000008d;
+    box-shadow: 0 2px 2px rgba(255, 255, 255, .1);
+    position: absolute;
+    border-radius: 10px
+}
+
+.main .menu .menu-content .left img {
+    height: 30vh;
+    width: 25vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, .3);
+    border: 1px solid #fff
+}
+
+.main .menu .menu-content .left .blr:hover {
+    opacity: 1;
+    transition: all ease-in-out .5s
+}
+
+.main .menu .menu-content .right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.7vw;
+    margin-right: 18vw
+}
+
+.main .menu .menu-content .right ul {
+    list-style: none;
+    letter-spacing: .2vw;
+    font-family: Sora;
+    font-weight: 200;
+    color: #fff;
+    font-size: 2.1vw
+}
+
+.main .menu .menu-content .right ul li {
+    margin-top: 2vh
+}
+
+.main .menu .menu-content .right ul a {
+    text-decoration: none;
+    color: #fff
+}
+
+.main .menu .menu-content .right ul li {
+    padding: 6px
+}
+
+.main .menu .menu-content .right ul li:hover {
+    transition: all .5s ease-in-out;
+    color: #ff1818
+}
+
+.main .menu .part2 .pt2 {
+    width: 100%;
+    display: flex;
+    letter-spacing: 2px;
+    font-weight: 10;
+    margin-top: 2vh;
+    justify-content: space-around
+}
+
+.main .menu .part2 .pt2 h3 {
+    font-size: 1.2vw;
+    font-family: manrope;
+    font-weight: 500
+}
+
+.main .menu .part2 .pt2 .social {
+    width: 350px;
+    height: 10vh;
+    margin-top: -3vh;
+    gap: 4vw;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    aspect-ratio: 3/2
+}
+
+.main .menu .part2 .pt2 .social .ri-instagram-fill:hover {
+    transition: all .6s ease;
+    background: #ff1818;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.main .menu .part2 .pt2 .social .ri-linkedin-box-fill:hover {
+    transition: all .6s ease;
+    background: #ff1818;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.main .menu .part2 .pt2 .social .ri-twitter-x-fill:hover {
+    transition: all .6s ease;
+    background: #ff1818;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.main .menu .part2 .pt2 .social .ri-medium-fill:hover {
+    transition: all .6s ease;
+    background: #ff1818;
+    -webkit-background-clip: text;
+    color: transparent
+}
+
+.main .menu .part2 .pt2 .social a {
+    text-decoration: none;
+    color: #fff
+}
+
+/* Landing Content */
+.page1 .page1-cont {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column
+}
+
+.page1 .page1-cont .page1-cont-top {
+    height: 80%;
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5vw;
+    margin-left: 5.8vw;
+    font-family: Sora;
+    text-transform: uppercase
+}
+
+.page1 .page1-cont .page1-cont-top h1 span {
+    background: linear-gradient(264deg, #ff8c22 -44.99%, #ffedac 155.84%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.page1 .landing-footer {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    align-items: center
+}
+
+.page1 .landing-footer .landing-footer-left {
+    width: 40vw;
+    height: 100%;
+    display: flex;
+    gap: 2.4vh;
+    flex-direction: column;
+    color: #fff;
+    margin-top: -118px
+}
+
+.page1 .landing-footer .landing-footer-left h3 {
+    font-size: 1.39vw;
+    font-family: manrope;
+    font-weight: 800;
+    margin-left: 5.8vw
+}
+
+.page1 .landing-footer .landing-footer-left h5 {
+    font-size: .9vw;
+    margin-left: 5.8vw;
+    font-weight: 500;
+    font-family: manrope
+}
+
+.page1 .landing-footer .landing-footer-left .btn {
+    margin-left: 5.8vw;
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.page1 .landing-footer .landing-footer-left .btn button {
+    background-color: #ff1818;
+    align-items: center;
+    padding: 7px 40px;
+    color: #fff;
+    font-size: 18px;
+    font-family: manrope;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #ff1818
+}
+
+.page1 .landing-footer .landing-footer-left .btn i {
+    font-size: 35px;
+    transition: all ease-in-out .3s
+}
+
+.page1 .landing-footer .landing-footer-right {
+    width: 60vw;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+    align-items: end
+}
+
+.page1 .landing-footer .landing-footer-right .landing-footer-right-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2vw;
+    height: 2vh;
+    padding: 4vw
+}
+
+.page1 .landing-footer .landing-footer-right .landing-footer-right-cont img {
+    scale: 0.8;
+    margin-right: 12vw
+}
+
+/* Page 2 Styles */
+.page2 {
+    width: 100%;
+    max-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+
+.page2 .rounded-div-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 9vh;
+    overflow: hidden;
+    margin-top: -9vh
+}
+
+.page2 .rounded-div-wrapper .rounded-div {
+    position: absolute;
+    left: 50%;
+    width: 135vw;
+    height: 600%;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translate(-50%)
+}
+
+.page2 .page2-head {
+    display: flex;
+    width: 100%;
+    height: 19vh;
+    font-family: sora;
+    flex-direction: column
+}
+
+.page2 .page2-head h1 {
+    margin-top: 2.5vw;
+    font-size: 4.4vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-left: 5.4vw
+}
+
+.page2 .page2-head .page2-head1 {
+    display: flex;
+    align-items: center;
+    margin-top: -1.7vw
+}
+
+.page2 .page2-head .page2-head1 h3 {
+    font-weight: 400;
+    font-size: 1.7vw;
+    padding-left: 5.4vw
+}
+
+.page2 .page2-head .page2-head1 img {
+    scale: 0.8
+}
+
+.page2 .page2-maincontent {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 27vh)
+}
+
+.page2 .page2-maincontent .page2-left {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont {
+    width: 80%;
+    height: 60vh;
+    line-height: 4vw;
+    font-family: manrope;
+    color: #ff1818;
+    opacity: .3;
+    position: absolute;
+    text-transform: uppercase;
+    top: 28vh;
+    left: 5.4vw
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont h1 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont h2 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont h3 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont h4 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont h5 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill {
+    width: 80%;
+    height: 60vh;
+    line-height: 4vw;
+    font-family: manrope;
+    color: red;
+    opacity: 1;
+    top: 28vh;
+    left: 5.4vw;
+    position: absolute;
+    text-transform: uppercase
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill h1 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    width: 0%;
+    text-wrap: nowrap;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill h2 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    width: 0%;
+    text-wrap: nowrap;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill h3 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    width: 0%;
+    text-wrap: nowrap;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill h4 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    width: 0%;
+    text-wrap: nowrap;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-left .page2-cont-fill h5 {
+    font-size: 2.8vw;
+    margin-bottom: -3.3vw;
+    width: 0%;
+    text-wrap: nowrap;
+    overflow: hidden
+}
+
+.page2 .page2-maincontent .page2-right {
+    width: calc(100% - 80%);
+    height: calc(100vh - 27vh);
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    overflow-x: hidden
+}
+
+.page2 .page2-maincontent .page2-right img {
+    width: 100%;
+    height: 95%
+}
+
+/* Fonts */
+.sora-font {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.manrope-font {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
