@@ -3,11 +3,10 @@ import SectionTwo from "../components/SectionTwo/SectionTwo";
 
 function Home() {
   return (
-    <main>
+    <div>
       <SectionOne />
-      <SectionTwo />
-    </main>
-  );
+    </div>
+  )
 }
 
 export default Home;
