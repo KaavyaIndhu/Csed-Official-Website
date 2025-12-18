@@ -418,28 +418,24 @@ body::-webkit-scrollbar {
 .main .menu .part2 .pt2 .social .ri-instagram-fill:hover {
     transition: all .6s ease;
     background: #ff1818;
-    -webkit-background-clip: text;
     color: transparent
 }
 
 .main .menu .part2 .pt2 .social .ri-linkedin-box-fill:hover {
     transition: all .6s ease;
     background: #ff1818;
-    -webkit-background-clip: text;
     color: transparent
 }
 
 .main .menu .part2 .pt2 .social .ri-twitter-x-fill:hover {
     transition: all .6s ease;
     background: #ff1818;
-    -webkit-background-clip: text;
     color: transparent
 }
 
 .main .menu .part2 .pt2 .social .ri-medium-fill:hover {
     transition: all .6s ease;
     background: #ff1818;
-    -webkit-background-clip: text;
     color: transparent
 }
 

@@ -8,6 +8,7 @@ import blogimg3 from "../../assets/sectionFour/blogimg3.webp";
 import blogimg4 from "../../assets/sectionFour/blogimg4.webp";
 import blogimg5 from "../../assets/sectionFour/blogimg5.webp";
 import blogimg6 from "../../assets/sectionFour/blogimg6.webp";
+import Boards from "./boards/Boards";
 
 const SectionFour = () => {
   useEffect(() => {
@@ -512,7 +513,7 @@ const SectionFour = () => {
         <div className="swiper-button-next custom-next-arrow"></div>
         <div className="swiper-button-prev custom-prev-arrow"></div>
       </div>
-
+      <Boards />
     </>
   );
 };

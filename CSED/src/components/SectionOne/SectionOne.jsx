@@ -7,7 +7,7 @@ import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min";
 
 import './SectionOne.css'
-import { asterisk, image2, logo, vitlogo, backgrounddrop, merch } from '../essentials/Imgaepaths';
+import { asterisk, image2, logo, vitlogo, backgrounddrop, merch, menucurvebg } from '../essentials/Imgaepaths';
 
 //Icons
 import { HiMenuAlt1 } from "react-icons/hi";
@@ -287,7 +287,14 @@ function SectionOne() {
   return (
     <>
       <div className="main">
-        <div className="menu" id="rax" ref={menuRef} style={{ display: (menuOpen || isClosing) ? 'flex' : 'none', animation: (menuOpen && !isClosing) ? 'slideInFromTop 0.7s ease forwards' : 'slideOutToTop 0.5s ease forwards' }}>
+        <div className="menu" id="rax" ref={menuRef} style={{ 
+          display: (menuOpen || isClosing) ? 'flex' : 'none', 
+          animation: (menuOpen && !isClosing) ? 'slideInFromTop 0.7s ease forwards' : 'slideOutToTop 0.5s ease forwards',
+          backgroundImage: `url(${menucurvebg})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+        }}>
           <div className="part1">
             <div className="menu-nav">
               <a href="./index.html"><img src={logo} loading="lazy" alt="image" /></a>

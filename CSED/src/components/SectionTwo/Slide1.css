@@ -1,0 +1,426 @@
+.page3 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #181818;
+    display: flex;
+    overflow: hidden
+}
+
+.page3 .page3-left {
+    width: 55vw;
+    height: 100vh;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column
+}
+
+.page3 .page3-left .page3-left-top {
+    color: #fff;
+    font-family: manrope;
+    font-size: 1.1vw;
+    padding: 1vw 11vh;
+    margin-top: 6.5vh
+}
+
+.page3 .page3-left .page3-left-top h1 {
+    font-size: 3.6vw;
+    margin-bottom: 4vh;
+    font-family: sora;
+    font-weight: 700;
+    letter-spacing: .2vw
+}
+
+.page3 .page3-left .page3-left-top h3 {
+    font-weight: 200
+}
+
+.page3 .page3-left .page3-left-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4.5vh;
+    gap: 14vh;
+    color: #fff;
+    margin-right: 5vw
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t {
+    display: flex;
+    gap: 12vw;
+    align-items: center
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    gap: .5vh;
+    font-family: manrope
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 h4 {
+    font-weight: 400
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 img {
+    width: 4.5vw;
+    margin-top: .5vh;
+    transition: all ease-in-out .2s
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    gap: .5vh;
+    font-family: manrope
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 h4 {
+    font-weight: 400
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 img {
+    width: 4.5vw;
+    margin-top: .5vh;
+    transition: all ease-in-out .2s
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b {
+    display: flex;
+    gap: 12vw;
+    align-items: center
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    gap: .5vh;
+    font-family: manrope
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 h4 {
+    font-weight: 400
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 img {
+    width: 4.5vw;
+    margin-top: .5vh;
+    transition: all ease-in-out .2s
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    gap: .5vh;
+    font-family: manrope
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 {
+    font-weight: 400;
+    display: flex
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott {
+    margin-left: .5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott i {
+    font-size: 2vw;
+    padding-left: .2vw;
+    transition: all ease-in-out .5s;
+    color: red
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott a {
+    text-decoration: none;
+    color: #fff
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott a:hover {
+    transition: all ease-in-out .6s;
+    color: red
+}
+
+.page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 img {
+    width: 4.5vw;
+    margin-top: .5vh;
+    transition: all ease-in-out .2s
+}
+
+.page3 .page3-right {
+    overflow: hidden;
+    margin-left: 80px;
+    margin-top: 23vh;
+    width: 28vw;
+    height: 65vh;
+    background: 0 0;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    transform: translateZ(1vw);
+    border-radius: .7vw
+}
+
+.page3 .page3-right .page3-right-top {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313131
+}
+
+.page3 .page3-right .page3-right-top .img-slider {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.page3 .page3-right .page3-right-top .img-slider .slider {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0% at 0 50%)
+}
+
+.page3 .page3-right .page3-right-top .img-slider .slider.active {
+    clip-path: circle(91.4% at 29% 49%);
+    transition: 1s;
+    transition-property: clip-path
+}
+
+.page3 .page3-right .page3-right-top .img-slider .slider img {
+    z-index: 1;
+    width: 100%;
+    height: 100%
+}
+
+.page3 .page3-right .page3-right-bottom {
+    display: flex;
+    height: 16%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-bottom-left-radius: .7vw;
+    border-bottom-right-radius: .7vw
+}
+
+.page3 .page3-right .page3-right-bottom .h31 {
+    font-family: manrope;
+    color: #ff2a2a;
+    font-size: 1.5vw;
+    font-weight: 700;
+    letter-spacing: .1vw
+}
+
+@media (max-width:431px) {
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t {
+        display: flex;
+        gap: 14vw;
+        align-items: center
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.9vw;
+        gap: .5vh;
+        font-family: manrope
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 h4 {
+        font-weight: 400
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-1 img {
+        width: 12vw;
+        margin-top: .5vh;
+        transition: all ease-in-out .2s
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.9vw;
+        gap: .5vh;
+        font-family: manrope
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 h4 {
+        font-weight: 400
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-t .page3-left-bottom-t-2 img {
+        width: 12vw;
+        margin-top: .5vh;
+        transition: all ease-in-out .2s
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b {
+        display: flex;
+        gap: 14vw;
+        align-items: center
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.9vw;
+        gap: .5vh;
+        font-family: manrope
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 h4 {
+        font-weight: 400
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-1 img {
+        width: 12vw;
+        margin-top: .5vh;
+        transition: all ease-in-out .2s
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 4.2vw;
+        gap: .5vh;
+        font-family: manrope
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 {
+        font-weight: 400;
+        display: flex
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott {
+        margin-left: .5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott i {
+        font-size: 5vw;
+        padding-left: .5vw;
+        transition: all ease-in-out .5s;
+        color: red
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: .3vw
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 h4 .rott a:hover {
+        transition: all ease-in-out .6s;
+        color: red
+    }
+
+    .page3 .page3-left .page3-left-bottom .page3-left-bottom-b .page3-left-bottom-b-2 img {
+        width: 12vw;
+        margin-top: .5vh;
+        transition: all ease-in-out .2s
+    }
+
+    .page3 .page3-right {
+        overflow: hidden;
+        margin-left: 13vw;
+        margin-top: 7vh;
+        width: 74vw;
+        height: 39vh;
+        background: 0 0;
+        display: flex;
+        flex-direction: column;
+        transform-style: preserve-3d;
+        transform: translateZ(1vw);
+        border-radius: .7vw
+    }
+
+    .page3 .page3-right .page3-right-top {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #313131
+    }
+
+    .page3 .page3-right .page3-right-top .img-slider {
+        position: relative;
+        width: 100%;
+        height: 100%
+    }
+
+    .page3 .page3-right .page3-right-top .img-slider .slider {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(0% at 0 50%)
+    }
+
+    .page3 .page3-right .page3-right-top .img-slider .slider.active {
+        clip-path: circle(91.4% at 29% 49%);
+        transition: 1s;
+        transition-property: clip-path
+    }
+
+    .page3 .page3-right .page3-right-top .img-slider .slider img {
+        z-index: 1;
+        width: 100%;
+        height: 100%
+    }
+
+    .page3 .page3-right .page3-right-bottom {
+        display: flex;
+        height: 16%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border-bottom-left-radius: .7vw;
+        border-bottom-right-radius: .7vw
+    }
+
+    .page3 .page3-right .page3-right-bottom .h31 {
+        font-family: manrope;
+        color: #ff2a2a;
+        font-size: 4vw;
+        font-weight: 700;
+        letter-spacing: .1vw
+    }
+}
+
+/* Font */
+.manrope-font {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
