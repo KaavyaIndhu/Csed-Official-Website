@@ -1,12 +1,13 @@
-import React from 'react'
-import SectionOne from '../components/SectionOne/SectionOne'
+import SectionOne from "../components/SectionOne/SectionOne";
+import SectionTwo from "../components/SectionTwo/SectionTwo";
 
 function Home() {
   return (
-    <div>
+    <main>
       <SectionOne />
-    </div>
-  )
+      <SectionTwo />
+    </main>
+  );
 }
 
-export default Home
+export default Home;
