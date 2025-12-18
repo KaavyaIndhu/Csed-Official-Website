@@ -7,7 +7,7 @@ import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min";
 
 import './SectionOne.css'
-import { asterisk, image2, logo, vitlogo, backgrounddrop, merch } from '../essentials/Imgaepaths';
+import { asterisk, image2, logo, vitlogo, backgrounddrop, merch } from '../essentials/ImagePaths';
 
 //Icons
 import { HiMenuAlt1 } from "react-icons/hi";

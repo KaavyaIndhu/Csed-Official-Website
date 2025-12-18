@@ -2,7 +2,6 @@
    BOARD SPECIFIC STYLES
    ============================ */
 
-/* Copied and adapted from board.css */
 @font-face {
     font-family: kommon;
     src: url(./KommonGrotesk-SemiBold.woff2);
@@ -29,6 +28,156 @@
     overflow: hidden;
     width: 45%;
     background-color: #181818
+}
+
+/* Floating Animation (Wobble) */
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes enterIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes enterOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+/* CLASS DEFINITIONS */
+
+/* 2023 Enter: Slide up only, NO wobble */
+.enter-in {
+    animation: enterIn 0.5s ease-out forwards;
+    opacity: 1;
+}
+
+/* 2023 Exit: Slide down/fade out */
+.enter-out {
+    animation: enterOut 0.5s ease-in forwards;
+}
+
+/* 2023 Static: Just visible, NO wobble */
+.static-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* DEPRECATED: .float-only logic removed */
+.float-only {
+    opacity: 1;
+}
+
+/* 2024/Others Enter: Fade in ONLY (No Wobble) */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* 2024/Others Exit: Fade out */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Slide Up Animation (Increase Year) */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Slide Down Animation (Decrease Year) */
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* DIGIT ANIMATIONS applied to .nodivva */
+.nodivva {
+    display: inline-block;
+}
+
+/* UP: Increase (e.g. 2023 -> 2024) */
+.digit-exit-up {
+    animation: slideOutUp 0.5s ease-in forwards;
+}
+
+.digit-enter-up {
+    animation: slideInUp 0.5s ease-out forwards;
+}
+
+/* DOWN: Decrease (e.g. 2025 -> 2024) */
+.digit-exit-down {
+    animation: slideOutDown 0.5s ease-in forwards;
+}
+
+.digit-enter-down {
+    animation: slideInDown 0.5s ease-out forwards;
+}
+
+
+/* Override combined animation for specifically enter-in scenarios */
+.divva img.enter-in {
+    animation: enterIn 0.5s ease-out forwards;
 }
 
 .teamspagesleft {
@@ -80,7 +229,6 @@
     min-width: 46.875vw;
     background-color: #000;
     overflow: hidden;
-    /* background-image: url(./Assets/board.webp);  Removed, handled via IMG tag or generic background */
     background-size: 40.365vw 40.509vh;
     background-color: #181818;
     background-position: 0 2.5rem;
@@ -90,29 +238,37 @@
 .divva {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    transition: transform 1s
+    position: relative;
+    /* Needed for absolute children */
+    /* display: flex;  Removed flex layout for images */
+    /* flex-direction: column; */
+    /* justify-content: end; */
+    /* transition: transform 1s */
 }
 
 .divva img {
+    position: absolute;
+    /* Stack images on top of each other */
+    bottom: 0;
+    left: .8vw;
     width: 40vw;
     height: 50vh;
-    align-self: flex-start;
-    margin-left: .8vw;
     object-fit: contain;
-    /* Added to keep aspect ratio */
+    /* transition handled by animation classes */
 }
 
-/* Reusing divva styles for other group photos basically */
+.group-image-hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
 
 .fade-in {
-    animation: fadeIn 1s forwards
+    animation: fadeIn 0.5s forwards
 }
 
 .fade-out {
-    animation: fadeOut 1s forwards
+    animation: fadeOut 0.5s forwards
 }
 
 @keyframes fadeIn {
@@ -171,7 +327,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center
+    text-align: center;
 }
 
 .noconatiner {
@@ -203,7 +359,8 @@
     vertical-align: middle;
     border: 3px solid #bababa;
     font-family: Sora;
-    border-radius: 9.287px;
+    border-radius: 18px;
+    /* Rounded pill shape as requested by user */
     font-weight: 800;
     color: #fff;
     transition: all ease .4s;
@@ -214,7 +371,7 @@
     cursor: pointer;
 }
 
-#buttonteamspages a {
+#buttonteamspages .btn2023 {
     text-decoration: none
 }
 
@@ -236,7 +393,7 @@
     border-radius: 0
 }
 
-#buttonteamspages p a {
+#buttonteamspages p .btn2023 {
     vertical-align: middle;
     font-family: Inter;
     font-weight: 800;
@@ -246,10 +403,12 @@
     position: relative;
     z-index: 9;
     width: 100%;
-    height: 100%
+    height: 100%;
+    display: inline-block;
+    /* Ensure it takes space like a/block if needed */
 }
 
-#buttonteamspages p:hover a {
+#buttonteamspages p:hover .btn2023 {
     color: #000
 }
 
@@ -363,7 +522,7 @@
     color: #fff
 }
 
-/* Individual Image Styles - Adapted from original */
+/* Individual Image Styles */
 .fgaakash,
 .fgyash,
 .fgvibhu,
@@ -512,7 +671,6 @@
     left: 5.729vw;
 }
 
-
 .bgrect {
     position: relative;
     max-width: 25.67vw;
@@ -585,13 +743,10 @@
     font-size: 20px;
     font-weight: 700;
     font-family: sans-serif;
-    /* Ensure consistent arrow look */
     z-index: 10;
     cursor: auto !important;
-    /* Ensure cursor is visible on button */
 }
 
-/* Hide default Swiper icons entirely */
 .swiper-button-next.teams::after,
 .swiper-button-prev.teams::after {
     display: none !important;
@@ -608,7 +763,6 @@
     top: 50%
 }
 
-/* Helper to center content */
 .center-content {
     display: flex;
     justify-content: center;
@@ -678,7 +832,7 @@
         padding: 3px 34px
     }
 
-    #buttonteamspages p a {
+    #buttonteamspages p .btn2023 {
         font-size: 5vw
     }
 
@@ -713,8 +867,6 @@
         max-height: 312px;
         left: 36px
     }
-
-    /* ... Add other mobile adjustments as needed from original CSS ... */
 
     .teamspagespan5 {
         font-size: 18px;
