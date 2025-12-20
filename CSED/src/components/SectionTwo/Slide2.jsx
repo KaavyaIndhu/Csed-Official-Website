@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./page4.css";
 
-import img1 from "../../assets/sectionthree/p4-img1.webp";
-import img2 from "../../assets/sectionthree/p4-img2.webp";
-import img3 from "../../assets/sectionthree/p4-img3.webp";
-import img4 from "../../assets/sectionthree/p4-img4.webp";
-import img5 from "../../assets/sectionthree/p4-img5.webp";
+import img1 from "../../assets/sectionTwo/p4-img1.webp";
+import img2 from "../../assets/sectionTwo/p4-img2.webp";
+import img3 from "../../assets/sectionTwo/p4-img3.webp";
+import img4 from "../../assets/sectionTwo/p4-img4.webp";
+import img5 from "../../assets/sectionTwo/p4-img5.webp";
 
 const items = [
   { title: "Impactful Events", img: img1 },

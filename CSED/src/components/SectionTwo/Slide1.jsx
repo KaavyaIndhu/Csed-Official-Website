@@ -2,9 +2,9 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useSpring } from "motion/react";
 
 import "./Slide1.css";
-import img1 from "../../assets/sectionthree/page3img1.webp";
-import img2 from "../../assets/sectionthree/page3img2.webp";
-import img3 from "../../assets/sectionthree/page3img3.webp";
+import img1 from "../../assets/sectionTwo/page3img1.webp";
+import img2 from "../../assets/sectionTwo/page3img2.webp";
+import img3 from "../../assets/sectionTwo/page3img3.webp";
 
 const images = [img1, img2, img3];
 
