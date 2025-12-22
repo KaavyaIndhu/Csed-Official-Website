@@ -1,7 +1,8 @@
 /* BLACK BACKGROUND OUTSIDE THE BOX */
 .page4-wrapper {
   width: 100vw;
-  background-color: #000000;
+  background-color: #181818
+;
   display: flex;
   justify-content: center;
 }
@@ -10,7 +11,8 @@
   border-radius: 30px;
   height: 90vh;
   width: 95vw;
-  margin-left: 2.6vw;
+  /* Remove margin-left and center the box */
+  margin: 0 auto;
   background-color: #ffffff;
   background-position: center;
   background-repeat: no-repeat;
