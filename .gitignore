@@ -1,2 +1,6 @@
 CSED/package-lock.json
 CSED/package-lock.json
+node_modules
+dist
+.env
+.DS_Store
