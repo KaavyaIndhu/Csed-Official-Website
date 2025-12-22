@@ -67,11 +67,13 @@ const Slide1 = () => {
             <div className="page3-left-bottom-t-1">
               <h3 className="counter">68+</h3>
               <h4>Events Organised</h4>
+              <hr style={{ width: '60%', border: '1px solid #ff2a2a', margin: '6px auto 0 auto' }} />
             </div>
 
             <div className="page3-left-bottom-t-2">
               <h3 className="counter">25+</h3>
               <h4>Inspiring Speaker</h4>
+              <hr style={{ width: '60%', border: '1px solid #ff2a2a', margin: '6px auto 0 auto' }} />
             </div>
           </div>
 
@@ -79,20 +81,23 @@ const Slide1 = () => {
             <div className="page3-left-bottom-b-1">
               <h3 className="counter">6500+</h3>
               <h4>Student Network</h4>
+              <hr style={{ width: '60%', border: '1px solid #ff2a2a', margin: '6px auto 0 auto' }} />
             </div>
 
             <div className="page3-left-bottom-b-2">
               <h3>Expanded</h3>
               <h4>
-                to{" "}
+                to&nbsp;
                 <a
                   href="https://www.instagram.com/csed.vitc/"
                   target="_blank"
                   rel="noreferrer"
+                  style={{ color: 'inherit', textDecoration: 'none' }}
                 >
-                  VIT Chennai ↗
+                  VIT Chennai <span style={{ color: '#ff2a2a' }}>↗</span>
                 </a>
               </h4>
+              <hr style={{ width: '60%', border: '1px solid #ff2a2a', margin: '6px auto 0 auto' }} />
             </div>
           </div>
         </div>
