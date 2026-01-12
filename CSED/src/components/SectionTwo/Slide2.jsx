@@ -6,7 +6,7 @@ import img2 from "../../assets/sectionTwo/p4-img2.webp";
 import img3 from "../../assets/sectionTwo/p4-img3.webp";
 import img4 from "../../assets/sectionTwo/p4-img4.webp";
 import img5 from "../../assets/sectionTwo/p4-img5.webp";
-import img6 from "../../assets/sectionTwo/page3img2.webp";
+
 const items = [
   { title: "Impactful Events", img: img1 },
   { title: "Skill-Building Workshops", img: img2 },
@@ -22,21 +22,8 @@ const Slide2 = () => {
     <section className="page4-wrapper">
       <div
         className="page4"
-        style={{
-          backgroundImage:
-            activeIndex !== null ? `url(${items[activeIndex].img})` : "none",
-        }}
+        style={{ backgroundImage: `url(${items[activeIndex ?? 0].img})` }}
       >
-        {/* ✅ DEFAULT COLLAGE BACKGROUND */}
-        {activeIndex === null && (
-          <div className="page4-default-collage">
-            {[img1, img2, img3, img4, img5,img6].map((img, i) => (
-              <img key={i} src={img} alt="" />
-            ))}
-          </div>
-        )}
-
-        {/* DARK OVERLAY ONLY ON HOVER */}
         <div
           className="bg-opacity"
           style={{ display: activeIndex !== null ? "block" : "none" }}
@@ -54,18 +41,12 @@ const Slide2 = () => {
             <div className="highlight">
               <div className="ticker">
                 <div className="ticker-track">
-                  {Array(20)
-                    .fill("CSED")
-                    .map((t, i) => (
-                      <span key={`a-${i}`}>{t}</span>
-                    ))}
+                  <span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span>
+                  <span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span>
                 </div>
                 <div className="ticker-track">
-                  {Array(20)
-                    .fill("CSED")
-                    .map((t, i) => (
-                      <span key={`b-${i}`}>{t}</span>
-                    ))}
+                  <span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span>
+                  <span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span><span>CSED</span>
                 </div>
               </div>
             </div>
